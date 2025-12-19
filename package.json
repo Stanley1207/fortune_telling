@@ -1,0 +1,12 @@
+{
+  "name": "bazi-fortune-telling",
+  "version": "1.0.0",
+  "description": "AI八字算命应用",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd backend && node server.js"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
