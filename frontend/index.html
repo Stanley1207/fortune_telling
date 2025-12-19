@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI八字解读 - 传统命理与现代智能</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 背景装饰 -->
+        <div class="bg-decoration"></div>
+        
+        <!-- 主容器 -->
+        <div class="container">
+            <!-- 首页 -->
+            <div id="homepage" class="page active">
+                <header class="header">
+                    <h1 class="logo">AI八字</h1>
+                    <p class="slogan">古法命理 · 智能解读</p>
+                </header>
+
+                <form id="bazi-form" class="input-form">
+                    <div class="form-group">
+                        <label for="birthdate">出生日期</label>
+                        <input type="date" id="birthdate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calendar-type">历法</label>
+                        <select id="calendar-type">
+                            <option value="solar">公历</option>
+                            <option value="lunar">农历</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth-time">出生时辰</label>
+                        <select id="birth-time" required>
+                            <option value="">请选择时辰</option>
+                            <option value="23-01">子时 (23:00-01:00)</option>
+                            <option value="01-03">丑时 (01:00-03:00)</option>
+                            <option value="03-05">寅时 (03:00-05:00)</option>
+                            <option value="05-07">卯时 (05:00-07:00)</option>
+                            <option value="07-09">辰时 (07:00-09:00)</option>
+                            <option value="09-11">巳时 (09:00-11:00)</option>
+                            <option value="11-13">午时 (11:00-13:00)</option>
+                            <option value="13-15">未时 (13:00-15:00)</option>
+                            <option value="15-17">申时 (15:00-17:00)</option>
+                            <option value="17-19">酉时 (17:00-19:00)</option>
+                            <option value="19-21">戌时 (19:00-21:00)</option>
+                            <option value="21-23">亥时 (21:00-23:00)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">性别</label>
+                        <select id="gender" required>
+                            <option value="">请选择</option>
+                            <option value="male">男</option>
+                            <option value="female">女</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">出生城市（可选）</label>
+                        <input type="text" id="city" placeholder="例如：北京">
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>开始解读</span>
+                    </button>
+                </form>
+
+                <div class="disclaimer">
+                    <p>* 本服务仅供娱乐参考，不构成任何医疗、法律、金融建议</p>
+                </div>
+            </div>
+
+            <!-- 加载页 -->
+            <div id="loading-page" class="page">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <p class="loading-text">正在排盘解读...</p>
+                    <p class="loading-hint">首次请求可能需要5-10秒</p>
+                </div>
+            </div>
+
+            <!-- 结果页 -->
+            <div id="result-page" class="page">
+                <div class="result-header">
+                    <h2>八字命盘</h2>
+                    <button id="recalculate-btn" class="icon-btn">重新测算</button>
+                </div>
+
+                <!-- 四柱展示 -->
+                <div id="pillars-display" class="pillars-container"></div>
+
+                <!-- AI解读内容 -->
+                <div id="ai-interpretation" class="interpretation-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
